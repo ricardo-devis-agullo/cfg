@@ -105,4 +105,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Custom
+
+source ~/.bash-powerline.sh
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
