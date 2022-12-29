@@ -8,7 +8,7 @@ elif ($(which apt > /dev/null )) ; then
   # Debian/Ubuntu install
   sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
                       libx11-dev libxinerama-dev sharutils suckless-tools \
-                      libxft-dev
+                      libxft-dev qutebrowser firefox neofetch
 else
   echo "Couldn't found a valid package manager"
   exit 1
