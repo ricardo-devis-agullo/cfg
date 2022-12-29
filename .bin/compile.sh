@@ -14,6 +14,7 @@ cd dwm
 sed -i 's/BAR_POWERLINE_STATUS_PATCH 0/BAR_POWERLINE_STATUS_PATCH 1/' dwm-flexipatch/patches.h
 # Config
 cp -R $HOME/.config/dwm/* dwm-flexipatch
+cp -R $HOME/.config/st/* st-flexipatch
 
 cd dwm-flexipatch
 make
