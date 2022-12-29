@@ -5,4 +5,7 @@ do
 done &
 nitrogen --restore &
 
+setxbmap us
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources 
+
 exec dwm
