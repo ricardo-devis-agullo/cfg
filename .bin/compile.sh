@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
-sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
-                    libx11-dev libxinerama-dev sharutils suckless-tools \
-                    libxft-dev
+if ($(which pacman > /dev/null )); ; then
+  # ArchLinux install
+  echo "To implement arch install"
+  exit 1
+elif ($(which pacman > /dev/null )); ; then
+  # Debian/Ubuntu install
+  sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
+                      libx11-dev libxinerama-dev sharutils suckless-tools \
+                      libxft-dev
+else
+  echo "Couldn't found a valid package manager"
+  exit 1
+fi
 
 cd $HOME
 mkdir -p dwm
