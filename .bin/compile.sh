@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-if ($(which pacman > /dev/null )); ; then
+if ($(which pacman > /dev/null )) ; then
   # ArchLinux install
   echo "To implement arch install"
   exit 1
-elif ($(which pacman > /dev/null )); ; then
+elif ($(which apt > /dev/null )) ; then
   # Debian/Ubuntu install
   sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
                       libx11-dev libxinerama-dev sharutils suckless-tools \
