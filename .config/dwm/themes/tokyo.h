@@ -40,6 +40,7 @@ static char urgbgcolor[]                 = "#15161E";
 static char urgbordercolor[]             = "#6bb2c0";
 static char urgfloatcolor[]              = "#15161E";
 
+#if BAR_POWERLINE_STATUS_PATCH
 static char *statuscolors[][ColCount] = {
 	/*                       fg                bg                border                float */
 	[SchemeNorm]         = { "#f7768e",        normbgcolor,			normbordercolor,      normfloatcolor },
@@ -52,3 +53,4 @@ static char *statuscolors[][ColCount] = {
 	[SchemeHidSel]       = { "#9ece6a",        normbordercolor,		c000000,              c000000 },
 	[SchemeUrg]          = { "#7aa2f7",        normbgcolor,			urgbordercolor,       urgfloatcolor },
 };
+#endif // BAR_POWERLINE_STATUS_PATCH
