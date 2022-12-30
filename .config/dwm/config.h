@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#define TERMINAL "st"
+#define TERM "st"
 #include "themes/tokyo.h"
 
 /* appearance */
@@ -844,7 +844,7 @@ static const Key on_empty_keys[] = {
 static const char *web1[]  = { "firefox", NULL };
 static const char *web2[]  = { "qutebrowser", NULL };
 static const char *pri2clip[]  = { "sh", "-c", "xclip -o -selection primary | xclip -selection clipboard", NULL };
-static const char *ranger[] = { TERMINAL, "-T", "Ranger", "-e", "ranger", NULL };
+static const char *ranger[] = { TERM, "-T", "Ranger", "-e", "ranger", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
