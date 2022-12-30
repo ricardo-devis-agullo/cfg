@@ -1,23 +1,47 @@
 #!/usr/bin/env bash
 
-if ($(which pacman > /dev/null )) ; then
+WM_FOLDER=~/wm
+
+if ($(command -v pacman >/dev/null 2>&1 )) ; then
   # ArchLinux install
-  echo "To implement arch install"
-  exit 1
-elif ($(which apt > /dev/null )) ; then
+  sudo pacman --needed -S vim nitrogen git base-devel libx11 xorg-xinit xorg \
+                          qutebrowser firefox neofetch ttf-liberation \
+                          ttf-jetbrains-mono mpv
+elif ($(command -v apt >/dev/null 2>&1 )) ; then
   # Debian/Ubuntu install
   sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
                       libx11-dev libxinerama-dev sharutils suckless-tools \
                       libxft-dev qutebrowser firefox neofetch fonts-liberation \
                       fonts-jetbrains-mono mpv
-
-  # To compile wired
-  sudo apt install -y librust-pangocairo-dev libdbus-1-dev librust-glib-sys-dev \
-                      librust-cairo-rs-dev libxss-dev libnotify-bin cargo
 else
   echo "Couldn't found a valid package manager"
   exit 1
 fi
+
+function yay_install {
+if (! $(command -v yay >/dev/null 2>&1 )) ; then
+  cd $HOME
+  git clone https://aur.archlinux.org/yay-bin.git
+  cd yay-bin
+  makepkg -si
+fi
+}
+
+function wired_install {
+if ($(command -v wired >/dev/null 2>&1 )) ; then
+  if ($(command -v pacman >/dev/null 2>&1 )) ; then
+    yay_install
+    yay -S wired
+  elif ($(command -v apt >/dev/null 2>&1 )) ; then
+    sudo apt install -y librust-pangocairo-dev libdbus-1-dev librust-glib-sys-dev \
+                        librust-cairo-rs-dev libxss-dev libnotify-bin cargo
+    cd $WM_FOLDER
+    [[ ! -d $WM_FOLDER/wired-notify ]] && git clone https://github.com/Toqozz/wired-notify.git
+    cd wired-notify
+    cargo build --release
+  fi
+fi
+}
 
 if [[ ! -f ~/.vim/autoload/plug.vim ]] ; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -32,7 +56,6 @@ cd $WM_FOLDER
 [[ ! -d $WM_FOLDER/dwm-flexipatch ]] && git clone https://github.com/bakkeby/dwm-flexipatch.git
 [[ ! -d $WM_FOLDER/st-flexipatch ]] && git clone https://github.com/bakkeby/st-flexipatch.git
 [[ ! -d $WM_FOLDER/dmenu-flexipatch ]] && git clone https://github.com/bakkeby/dmenu-flexipatch.git
-[[ ! -d $WM_FOLDER/wired-notify ]] && git clone https://github.com/Toqozz/wired-notify.git
 
 # Enable patches
 cp dwm-flexipatch/patches.def.h dwm-flexipatch/patches.h
@@ -64,5 +87,4 @@ cd ../dmenu-flexipatch
 make
 sudo make clean install
 
-cd ../wired-notify
-cargo build --release
+wired_install
