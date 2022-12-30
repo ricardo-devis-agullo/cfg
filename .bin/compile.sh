@@ -9,7 +9,11 @@ elif ($(which apt > /dev/null )) ; then
   sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
                       libx11-dev libxinerama-dev sharutils suckless-tools \
                       libxft-dev qutebrowser firefox neofetch fonts-liberation \
-                      mpv
+                      fonts-jetbrains-mono mpv
+
+  # To compile wired
+  sudo apt install -y librust-pangocairo-dev libdbus-1-dev librust-glib-sys-dev \
+                      librust-cairo-rs-dev libxss-dev libnotify-bin cargo
 else
   echo "Couldn't found a valid package manager"
   exit 1
@@ -26,6 +30,7 @@ cd dwm
 [[ ! -d ~/dwm/dwm-flexipatch ]] && git clone https://github.com/bakkeby/dwm-flexipatch.git
 [[ ! -d ~/dwm/st-flexipatch ]] && git clone https://github.com/bakkeby/st-flexipatch.git
 [[ ! -d ~/dwm/dmenu-flexipatch ]] && git clone https://github.com/bakkeby/dmenu-flexipatch.git
+[[ ! -d ~/dwm/wired-notify ]] && git clone https://github.com/Toqozz/wired-notify.git
 
 # Enable patches
 sed -i 's/SAVEFLOATS_PATCH 0/SAVEFLOATS_PATCH 1/' dwm-flexipatch/patches.h
@@ -53,3 +58,6 @@ sudo make clean install
 cd ../dmenu-flexipatch
 make
 sudo make clean install
+
+cd ../wired-notify
+cargo build --release
