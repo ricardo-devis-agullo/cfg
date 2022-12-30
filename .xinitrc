@@ -6,7 +6,7 @@ done &
 nitrogen --restore &
 
 killall wired
-~/dwm/wired-notify/target/release/wired -r &
+~/wm/wired-notify/target/release/wired -r &
 
 setxbmap us
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources 
