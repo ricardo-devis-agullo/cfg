@@ -46,6 +46,7 @@ sed -i 's/SCROLLBACK_MOUSE_PATCH 0/SCROLLBACK_MOUSE_PATCH 1/' st-flexipatch/patc
 # Config
 cp -R $HOME/.config/dwm/* dwm-flexipatch
 cp -R $HOME/.config/st/* st-flexipatch
+cp $HOME/.config/wired/wired.ron_tokyo $HOME/.config/wired/wired.ron
 
 cd dwm-flexipatch
 make
