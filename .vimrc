@@ -18,8 +18,11 @@ let mapleader=","
 
 call plug#begin()
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#end()
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 colorscheme tokyonight
+
+nnoremap <leader>n :NERDTreeFocus<CR>
