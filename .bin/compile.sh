@@ -8,7 +8,8 @@ elif ($(which apt > /dev/null )) ; then
   # Debian/Ubuntu install
   sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
                       libx11-dev libxinerama-dev sharutils suckless-tools \
-                      libxft-dev qutebrowser firefox neofetch fonts-liberation
+                      libxft-dev qutebrowser firefox neofetch fonts-liberation \
+                      mpv
 else
   echo "Couldn't found a valid package manager"
   exit 1
@@ -27,7 +28,6 @@ cd dwm
 [[ ! -d ~/dwm/dmenu-flexipatch ]] && git clone https://github.com/bakkeby/dmenu-flexipatch.git
 
 # Enable patches
-sed -i 's/BAR_POWERLINE_STATUS_PATCH 0/BAR_POWERLINE_STATUS_PATCH 1/' dwm-flexipatch/patches.h
 sed -i 's/SAVEFLOATS_PATCH 0/SAVEFLOATS_PATCH 1/' dwm-flexipatch/patches.h
 sed -i 's/PERTAG_PATCH 0/PERTAG_PATCH 1/' dwm-flexipatch/patches.h
 sed -i 's/SWAPFOCUS_PATCH 0/SWAPFOCUS_PATCH 1/' dwm-flexipatch/patches.h

@@ -23,4 +23,3 @@ Install config tracking in your $HOME by running:
 - File explorer cli
 - Quake terminal
 - Volume keybindings (up/down/mute)
-- Fix xsetroot
