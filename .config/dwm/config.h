@@ -842,6 +842,7 @@ static const Key on_empty_keys[] = {
 
 static const char *web1[]  = { "firefox", NULL };
 static const char *web2[]  = { "qutebrowser", NULL };
+static const char *pri2clip[]  = { "sh", "-c", "xclip -o -selection primary | xclip -selection clipboard", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
@@ -852,6 +853,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  {.v = web1 } },
 	{ MODKEY|ShiftMask,             XK_w,          spawn,                  {.v = web2 } },
+	{ MODKEY,                       XK_c,          spawn,                  {.v = pri2clip } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return,     riospawn,               {.v = termcmd } },

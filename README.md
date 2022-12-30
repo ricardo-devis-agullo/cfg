@@ -16,7 +16,6 @@ Install config tracking in your $HOME by running:
 
 ## Todo
 
-- Clipboard
 - Battery administrator
 - Screen saver / lock
 - Email cli
