@@ -14,6 +14,11 @@ else
   exit 1
 fi
 
+if [[ ! -f ~/.vim/autoload/plug.vim ]] ; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
 cd $HOME
 mkdir -p dwm
 cd dwm
