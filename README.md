@@ -19,5 +19,6 @@ Install config tracking in your $HOME by running:
 - Battery administrator
 - Screen saver / lock
 - Email cli
+- Emoji support in bar
 - Quake terminal
 - Volume keybindings (up/down/mute)
