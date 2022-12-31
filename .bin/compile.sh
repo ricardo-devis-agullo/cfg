@@ -2,7 +2,16 @@
 
 WM_FOLDER=~/wm
 
+function banner {
+  echo "+------------------------------------------+"
+  printf "| %-40s |\n" "`date`"
+  echo "|                                          |"
+  printf "|`tput bold` %-40s `tput sgr0`|\n" "$@"
+  echo "+------------------------------------------+"
+}
+
 function install_packages {
+    banner "Installing packages"
   if ($(command -v pacman >/dev/null 2>&1 )) ; then
     # ArchLinux install
     sudo pacman --needed -S vim nitrogen git base-devel libx11 xorg-xinit xorg \
@@ -33,12 +42,14 @@ function yay_install {
 
 function install_wired {
   if (! $(command -v wired >/dev/null 2>&1 )) ; then
+    banner "Installing wired-notify"
     if ($(command -v pacman >/dev/null 2>&1 )) ; then
       yay_install
       yay -S wired
     elif ($(command -v apt >/dev/null 2>&1 )) ; then
       sudo apt install -y librust-pangocairo-dev libdbus-1-dev librust-glib-sys-dev \
                           librust-cairo-rs-dev libxss-dev libnotify-bin cargo
+      mkdir -p $WM_FOLDER
       cd $WM_FOLDER
       [[ ! -d $WM_FOLDER/wired-notify ]] && git clone https://github.com/Toqozz/wired-notify.git
       cd wired-notify
@@ -51,6 +62,7 @@ function install_wired {
 }
 
 function install_dwm {
+  banner "Installing dwm"
   mkdir -p $WM_FOLDER
   cd $WM_FOLDER
   [[ ! -d $WM_FOLDER/dwm-flexipatch ]] && git clone https://github.com/bakkeby/dwm-flexipatch.git
@@ -74,7 +86,7 @@ function install_dwm {
 }
 
 function install_st {
-  cd $HOME
+  banner "Installing st"
   mkdir -p $WM_FOLDER
   cd $WM_FOLDER
   [[ ! -d $WM_FOLDER/st-flexipatch ]] && git clone https://github.com/bakkeby/st-flexipatch.git
@@ -93,7 +105,7 @@ function install_st {
 }
 
 function install_dmenu {
-  cd $HOME
+  banner "Installing dmenu"
   mkdir -p $WM_FOLDER
   cd $WM_FOLDER
   [[ ! -d $WM_FOLDER/dmenu-flexipatch ]] && git clone https://github.com/bakkeby/dmenu-flexipatch.git
@@ -104,6 +116,7 @@ function install_dmenu {
 }
 
 function configure_vim {
+  banner "Configuring VIM"
   if [[ ! -f ~/.vim/autoload/plug.vim ]] ; then
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
