@@ -3,11 +3,13 @@
 WM_FOLDER=~/wm
 
 function banner {
+  echo
   echo "+------------------------------------------+"
   printf "| %-40s |\n" "`date`"
   echo "|                                          |"
   printf "|`tput bold` %-40s `tput sgr0`|\n" "$@"
   echo "+------------------------------------------+"
+  echo
 }
 
 function install_packages {
