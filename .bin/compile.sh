@@ -13,7 +13,7 @@ function banner {
 }
 
 function install_packages {
-    banner "Installing packages"
+  banner "Installing packages"
   if ($(command -v pacman >/dev/null 2>&1 )) ; then
     # ArchLinux install
     sudo pacman --needed -S vim nitrogen git base-devel libx11 xorg-xinit xorg \
@@ -118,8 +118,8 @@ function install_dmenu {
 }
 
 function configure_vim {
-  banner "Configuring VIM"
   if [[ ! -f ~/.vim/autoload/plug.vim ]] ; then
+    banner "Configuring VIM"
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
