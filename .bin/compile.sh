@@ -88,3 +88,5 @@ make
 sudo make clean install
 
 wired_install
+
+nitrogen --set-scaled --no-recurse --random $HOME/bgs
