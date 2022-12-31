@@ -28,7 +28,7 @@ fi
 }
 
 function wired_install {
-if ($(command -v wired >/dev/null 2>&1 )) ; then
+if (! $(command -v wired >/dev/null 2>&1 )) ; then
   if ($(command -v pacman >/dev/null 2>&1 )) ; then
     yay_install
     yay -S wired
@@ -39,6 +39,7 @@ if ($(command -v wired >/dev/null 2>&1 )) ; then
     [[ ! -d $WM_FOLDER/wired-notify ]] && git clone https://github.com/Toqozz/wired-notify.git
     cd wired-notify
     cargo build --release
+    sudo cp $WM_FOLDER/wired-notify/target/release/wired /usr/local/bin
   fi
 fi
 }
