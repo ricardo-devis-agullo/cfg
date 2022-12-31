@@ -42,7 +42,7 @@ function yay_install {
   fi
 }
 
-function install_wired {
+function install_wired_notify {
   if (! $(command -v wired >/dev/null 2>&1 )) ; then
     banner "Installing wired-notify"
     if ($(command -v pacman >/dev/null 2>&1 )) ; then
@@ -130,4 +130,4 @@ configure_vim
 install_dwm
 install_st
 install_dmenu
-install_wired
+install_wired_notify
