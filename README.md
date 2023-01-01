@@ -16,7 +16,7 @@ Install config tracking in your $HOME by running:
 
 Or with a tiny url
 
-    https://tinyurl.com/redzcfg | /bin/bash
+    curl -Lks https://tinyurl.com/redzcfg | /bin/bash
 
 ## Todo
 
