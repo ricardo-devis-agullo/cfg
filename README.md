@@ -14,6 +14,10 @@ Install config tracking in your $HOME by running:
 
     curl -Lks https://raw.githubusercontent.com/ricardo-devis-agullo/cfg/main/.bin/install.sh | /bin/bash
 
+Or with a tiny url
+
+    https://tinyurl.com/redzcfg | /bin/bash
+
 ## Todo
 
 - Battery administrator
