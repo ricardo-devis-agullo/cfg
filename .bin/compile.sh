@@ -78,6 +78,8 @@ function install_dwm {
   sed -i 's/FOCUSADJACENTTAG_PATCH 0/FOCUSADJACENTTAG_PATCH 1/' dwm-flexipatch/patches.h
   sed -i 's/PUSH_NO_MASTER_PATCH 0/PUSH_NO_MASTER_PATCH 1/' dwm-flexipatch/patches.h
   sed -i 's/CFACTS_PATCH 0/CFACTS_PATCH 1/' dwm-flexipatch/patches.h
+  sed -i 's/VANITYGAPS_PATCH 0/VANITYGAPS_PATCH 1/' dwm-flexipatch/patches.h
+  sed -i 's/BAR_PADDING_VANITYGAPS_PATCH 0/BAR_PADDING_VANITYGAPS_PATCH 1/' dwm-flexipatch/patches.h
 
   # Config
   cp -R $HOME/.config/dwm/* dwm-flexipatch
