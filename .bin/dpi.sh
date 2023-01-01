@@ -8,8 +8,8 @@ case $1 in
   144)
     sed -i 's/Xft.dpi:.*/Xft.dpi:       144/' ~/.Xresources
     sed -i 's/xrandr --dpi.*/xrandr --dpi 144/' ~/.xinitrc
-    sed -i 's/pixelsize=[[:digit:]]*/pixelsize=14/' ~/.config/dwm/config.h
-    sed -i 's/Liberation Mono [[:digit:]]*/Liberation Mono 14/' ~/.config/dwm/config.h
+    sed -i 's/pixelsize=[[:digit:]]*/pixelsize=20/' ~/.config/dwm/config.h
+    sed -i 's/Liberation Mono [[:digit:]]*/Liberation Mono 20/' ~/.config/dwm/config.h
     ;;
   *)
     echo "Invalid DPI (only 96 or 144 valid)."
