@@ -114,6 +114,9 @@ function install_dmenu {
   cd $WM_FOLDER
   [[ ! -d $WM_FOLDER/dmenu-flexipatch ]] && git clone https://github.com/bakkeby/dmenu-flexipatch.git
 
+  # Config
+  cp -R $HOME/.config/dmenu/* dmenu-flexipatch
+
   cd dmenu-flexipatch
   make
   sudo make clean install
