@@ -9,6 +9,7 @@ killall wired
 wired -r &
 
 setxbmap us
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources 
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+xrandr --dpi 144
 
 exec dwm
