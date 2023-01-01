@@ -125,8 +125,18 @@ function configure_vim {
   fi
 }
 
+function configure_qutebrowser {
+  if [[ ! -d ~/.config/qutebrowser/catppuccin ]] ; then
+    git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
+  else
+    cd ~/.config/qutebrowser/catppuccin
+    git pull
+  fi
+}
+
 install_packages
 configure_vim
+configure_qutebrowser
 install_dwm
 install_st
 install_dmenu
