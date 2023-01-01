@@ -18,13 +18,13 @@ function install_packages {
     # ArchLinux install
     sudo pacman --needed -S vim nitrogen git base-devel libx11 xorg-xinit xorg \
                             qutebrowser firefox neofetch ttf-liberation \
-                            ttf-jetbrains-mono mpv ranger
+                            ttf-jetbrains-mono mpv ranger zip
   elif ($(command -v apt >/dev/null 2>&1 )) ; then
     # Debian/Ubuntu install
     sudo apt install -y vim nitrogen git build-essential xinit x11-xserver-utils \
                         libx11-dev libxinerama-dev sharutils suckless-tools \
                         libxft-dev qutebrowser firefox neofetch fonts-liberation \
-                        fonts-jetbrains-mono mpv ranger
+                        fonts-jetbrains-mono mpv ranger zip
   else
     echo "Couldn't found a valid package manager"
     exit 1
