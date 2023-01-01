@@ -15,3 +15,4 @@ config config status.showUntrackedFiles no
 
 config update-index --skip-worktree README.md
 rm README.md
+chmod +x $HOME/.bin/*

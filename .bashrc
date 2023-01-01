@@ -107,5 +107,7 @@ fi
 
 # Custom
 
+export PATH=$PATH:~/.bin
+
 source ~/.bash-powerline.sh
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
