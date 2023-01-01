@@ -2075,7 +2075,12 @@ c.fonts.default_size = '10pt'
 ## the search engine name to the search term, e.g. `:open google
 ## qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {
+  'DEFAULT': 'https://duckduckgo.com/?q={}',
+  'az': 'https://www.amazon.es/s?k={}',
+  'fa': 'https://www.filmaffinity.com/es/search.php?stext={}',
+  'yt': 'https://www.youtube.com/results?search_query={}'
+}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
