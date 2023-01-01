@@ -10,5 +10,6 @@ wired -r &
 
 setxbmap us
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources 
+xrandr --dpi 96
 
 exec dwm
