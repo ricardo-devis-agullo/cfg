@@ -17,6 +17,7 @@ set mouse=a
 let mapleader=","
 
 call plug#begin()
+Plug 'kien/ctrlp.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#end()
