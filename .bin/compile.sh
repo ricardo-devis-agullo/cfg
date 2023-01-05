@@ -15,12 +15,11 @@ function banner {
 function install_packages {
   banner "Installing packages"
   # ArchLinux install
-  sudo pacman --needed -S vim git base-devel libx11 xorg-xinit xorg \
+  sudo pacman --needed -S vim git base-devel swayidle swaybg pass waybar \
                           qutebrowser firefox neofetch ttf-liberation \
-                          ttf-jetbrains-mono mpv ranger zip pass youtube-dl
+                          ttf-jetbrains-mono mpv ranger zip pass youtube-dl \
                           yay qt5-wayland vscode kitty wofi mako pipewire \
-                          wireplumber polkit-kde-agent waybar pass swaybg \
-                          swayidle
+                          wireplumber polkit-kde-agent
 
   yay -S hyprland hyprpaper-git ttf-work-sans swaylock-effects
 }
