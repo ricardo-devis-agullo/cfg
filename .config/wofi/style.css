@@ -1,0 +1,23 @@
+window {
+  margin: 0px;
+  border: 1px solid #000;
+  color: #c0caf5;
+  background-color: #15161e;
+  border-radius: 12px;
+}
+
+#outer-box {
+  margin-bottom: 12px;
+}
+
+#input {
+  background-color: #1a1b26;
+}
+
+#text {
+  margin: 4px;
+}
+
+#entry:selected {
+  background-color: #33467C;
+}
