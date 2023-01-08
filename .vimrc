@@ -1,3 +1,5 @@
+set t_ut=
+
 syntax on
 filetype on
 set nocompatible

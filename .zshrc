@@ -105,3 +105,6 @@ USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
 
 export PATH=$PATH:~/.local/bin
+export TERM="xterm-256color"
+
+alias wlcode="code --enable-features=UseOzonePlatform --ozone-platform=wayland"
