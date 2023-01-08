@@ -21,7 +21,8 @@ function install_packages {
                           yay qt5-wayland vscode kitty wofi mako pipewire \
                           wireplumber polkit-kde-agent
 
-  yay -S hyprland hyprpaper-git ttf-work-sans swaylock-effects pass-import wofi-pass
+  yay -S hyprland hyprpaper-git ttf-work-sans swaylock-effects pass-import \
+         wofi-pass jq
 }
 
 function configure_vim {
