@@ -20,7 +20,7 @@ function install_packages {
                           ttf-jetbrains-mono mpv ranger zip pass youtube-dl \
                           yay qt5-wayland vscode kitty wofi mako pipewire \
                           wireplumber polkit-kde-agent pamixer pavucontrol \
-                          lxappearance
+                          lxappearance slurp grim viewnior
 
   yay -S hyprland hyprpaper-git ttf-work-sans swaylock-effects pass-import \
          wofi-pass jq
